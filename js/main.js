@@ -1,6 +1,6 @@
 
-
-$('.carousel_container').slick({
+let carousel = document.getElementsByClassName('.carousel_container');
+$('carousel').slick({
     infinite: true,
     speed: 300,
     dots: true,
