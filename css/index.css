@@ -47,7 +47,7 @@ button {
 .search {
     display: flex;
     align-items: center;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     background-color: #00000006;
     width: 50%;
     height: 60px;
@@ -55,6 +55,7 @@ button {
     border-radius: 20px;
     padding: 5px 10 px;
     color: #4b4b4b;
+    font-size: 25px;
 }
 
 #searchInput {
