@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -8,13 +8,16 @@
 }
 
 /* header*/
-li, a, button {
+li,
+a,
+button {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
     color: #edf0f1;
     text-decoration: none;
 }
+
 header {
     display: flex;
     justify-content: space-between;
@@ -22,22 +25,27 @@ header {
     padding: 0px 10%;
     background-color: #24252A;
 }
+
 .logo {
     cursor: pointer;
 }
+
 .nav__links {
     list-style: none;
 }
+
 .nav__links li {
     display: inline-block;
     padding: 0px 20px;
 }
-.nav__links li a{
+
+.nav__links li a {
     transition: all 0.3 ease 0s;
 }
+
 .botaoheader {
     padding: 9px 25px;
-    background-color: rgba(0,136,169,1);
+    background-color: rgba(0, 136, 169, 1);
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -52,7 +60,7 @@ header {
     background-color: #00000006;
     width: 50%;
     height: 60px;
-    margin:20px auto;
+    margin: 20px auto;
     border-radius: 20px;
     padding: 5px 10 px;
     color: #4b4b4b;
@@ -86,6 +94,10 @@ footer {
     text-decoration: none;
 }
 
+.footer-list {
+    list-style: none;
+}
+
 #footer-content {
     background-color: #171717;
     display: grid;
@@ -114,7 +126,7 @@ footer {
     transition: all 0.4s;
 }
 
-#footer-social-media .footer-link i{
+#footer-social-media .footer-link i {
     font-size: 1.25rem;
 }
 
@@ -173,15 +185,15 @@ footer {
 }
 
 #input-group button {
-background-color: #7f37c9;
-border: none;
-color: #f5f5f5;
-padding: 0px 1.25rem;
-font-size: 1.125rem;
-height: 100%;
-border-radius: 0px 4px 4px 0px;
-cursor: pointer;
-transition: all 0.4s;
+    background-color: #7f37c9;
+    border: none;
+    color: #f5f5f5;
+    padding: 0px 1.25rem;
+    font-size: 1.125rem;
+    height: 100%;
+    border-radius: 0px 4px 4px 0px;
+    cursor: pointer;
+    transition: all 0.4s;
 }
 
 #input-group button:hover {
@@ -201,12 +213,12 @@ transition: all 0.4s;
     #footer-content {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
-    }    
+    }
 }
 
 @media screen and (max-width: 426px) {
     #footer-content {
         grid-template-columns: repeat(1, 1fr);
         padding: 3rem 2rem;
-    }    
+    }
 }
