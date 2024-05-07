@@ -8,9 +8,7 @@
 }
 
 /* header*/
-li,
-a,
-button {
+li, a, button {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -22,25 +20,48 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 10%;
+    position: fixed;
+    width: 100%;
+    padding: 20px 100px;
+    top: 0;
+    right: 0;
     background-color: #24252A;
-}
-
-.logo {
-    cursor: pointer;
+    transition: 0.5s;
 }
 
 .nav__links {
+    display: flex;
+    column-gap: 5rem;
     list-style: none;
 }
 
 .nav__links li {
-    display: inline-block;
-    padding: 0px 20px;
+    position: relative;
 }
 
-.nav__links li a {
-    transition: all 0.3 ease 0s;
+.nav__links a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: beige;
+}
+
+.nav__links a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.3s all linear;
+}
+
+.nav__links a:hover::after, .nav__links .home-active::after {
+    width: 100%;
+}
+
+.logo {
+    cursor: pointer;
 }
 
 .botaoheader {
