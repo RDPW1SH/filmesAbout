@@ -55,6 +55,7 @@ button {
     width: 100%;
     height: 50vh !important;
 }
+/*
 .slick-dots {
     position: absolute;
     bottom: 10px;
@@ -72,4 +73,21 @@ button {
     border: 2px solid white;
     color: none ;
     background: rgba(0, 0, 0, 0.500);
+}*/
+.slide-text {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.500);
+    padding: 6px;
+    margin-bottom: 0px;
+    width: inherit;
+    bottom: 0;
+}
+.sort_by_genre_romance {
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 15px;
+}
+.sort_by-genre_poster_div {
+    width: 100px;
 }
