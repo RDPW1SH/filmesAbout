@@ -1,15 +1,10 @@
-$.ajax({
-    url: 'https://api.themoviedb.org/3/discover/movie',
-    type: 'GET',
-    data: {
-        api_key: 'a1bf35fb81fc85767490536ac889539f',
-        language: 'en-US',
-        include_adult: false,
-        include_video: false,
-    },
-    success: function(movies) { 
+// Função para obter o parâmetro da URL
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
 
-        movieId = 0;
-    }
-    
-});
+// Obter o ID do filme da URL
+var movieId = getUrlParameter('id');
