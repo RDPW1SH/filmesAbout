@@ -28,17 +28,19 @@ $(document).ready(function(){
             });
 
               let votes = Math.round(movie.vote_average * 10) / 10;
-              let slide = '<li class="movie-slide"><img src="https://image.tmdb.org/t/p/w500/' + movie.poster_path + '"><div class="slide-text">' + votes + '</div></li>';              
+              let slide = '<li class="movie-slide"><img src="https://image.tmdb.org/t/p/w500/' + movie.poster_path + '">';              
                 $('.carousel_container').append(slide);
             });
 
             // Inicializar o Slick Carousel
             $('.carousel_container').slick({
                 dots: false,
+                prevArrow: false,
+                nextArrow: false,
                 infinite: true,
                 autoplay: true,
                 draggable: false,
-                speed: 3000,
+                speed: 4000,
                 slidesToShow: 4,
                 slidesToScroll: 4,
                 responsive: [
