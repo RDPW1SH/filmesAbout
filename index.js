@@ -10,3 +10,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         dropdownMenu.style.display = 'none';
     });
 });
+
+function scrollToElement() {
+    document.getElementById('targetElement').scrollIntoView({ behavior: 'smooth' });
+}

@@ -9,23 +9,24 @@
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="index.js">
     <title>FilmesAbout</title>
 </head>
 
 <body>
     <header>
-        <img class="logo" src="img/logo.png" alt="logo" width="160px" height="105px">
+        <img class="logo" src="img/logo.png" alt="logo" width="160px" height="105px"></a>>
         <nav>
             <ul class="nav__links">
+                <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
-                    <a href="#home" class="home-active">Home</a>
+                    <a href="#home" class="home-active">Movies</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#home1">Option 1</a></li>
-                        <li><a href="#home2">Option 2</a></li>
-                        <li><a href="#home3">Option 3</a></li>
+                        <li><a href="#" onclick="scrollToElement()">Romance</a></li>
+                        <li><a href="#" onclick="scrollToElement()">Horror</a></li>
+                        <li><a href="#" onclick="scrollToElement()">Option 3</a></li>
                     </ul>
                 </li>
-                <li><a href="#movies">Movies</a></li>
                 <li><a href="#coming">Coming</a></li>
                 <li><a href="#subscribe">Subscribe</a></li>
             </ul>
@@ -48,7 +49,7 @@
         </div>
 
         <div class="sort_by_genre_romance romance">
-            <div class="sort_by_genre_title">
+            <div class="sort_by_genre_title" id="targetElement">
                 <h2>Romance</h2>
             </div>
             <div class="sort_by_genre_romance_list">
