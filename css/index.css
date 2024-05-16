@@ -279,65 +279,79 @@ footer {
 }
 
 /*TMDB RELATED*/
+
 .carousel_container {
+    max-width: 100vw;
     width: 100%;
-    display: block;
-}
 
-.carousel_container img {
+}
+.slick-track {
+    height: 50vh;
     width: 100%;
-    height: 50vh !important;
 }
-
-.slide-text {
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.500);
-    padding: 6px;
-    margin-bottom: 0px;
+.slick-slide img {
     width: inherit;
-    bottom: 0;
+    height: inherit;
 }
-
-.sort_by_genre_romance {
-    padding: 25px;
+.sort_by_genre {
+    padding: 20px 20px 0px 20px;
 }
-
 .sort_by_genre_title {
-
-    display: flex;
-    border-bottom: 3px solid yellow;
+    border-bottom: 2px solid black;
 }
-
-.sort_by_genre_romance_list {
+.sort_by_genre_list_romance,
+.sort_by_genre_list_horror {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    width: 100%;
-    height: auto;
 }
-
 .sort_by_genre_poster_div {
-    width: auto;
-    padding: 15px;
-}
-
-.sort_by_genre_poster_div img {
-    width: 230px;
-    height: 300px;
-
-}
-
-.sort_by_genre_movie_text span {
-    background: rgba(0, 136, 169, 1);
+    width: 200px;
+    margin: 1rem;
+    border-radius: 3px;
+    box-shadow: 0.2px 4px 5px rgba(0,0,0,0.1);
+    background-color: #24252A;
+    position: relative;
+    overflow: hidden;
 
 }
-
+.sort_by_genre_poster_div img{
+    width: 200px;
+    height: 280px;
+}
 .sort_by_genre_movie_text {
-    margin-bottom: 0px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 5px;
-    width: inherit;
-    background: aqua;
+}
+.sort_by_genre_movie_text h3{
+    margin-top: 0;
+}
+.movie-link {
+    width: auto;
+    color: black;
+}
+.overview {
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-size: 14px;
     bottom: 0;
+    background-color: beige;
+    padding: 1rem;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+}
+.sort_by_genre_movie_text span{
+    background: rgb(250 250 250 / 40%);
+    padding: 2px;
+
+}
+.sort_by_genre_poster_div:hover .overview {
+    transform: translateY(0);
 }
 
 /**/

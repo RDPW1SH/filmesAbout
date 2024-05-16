@@ -102,6 +102,7 @@ button {
 .overview {
     position: absolute;
     left: 0;
+    font-size: 13px;
     right: 0;
     bottom: 0;
     background-color: beige;
