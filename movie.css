@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li, a, button {
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+.movie_banner_container {
+    width: 100%;
+    height: 60vh;
+    background-color: blueviolet;
+}
+.movie_banner {
+    display: flex;
+    padding: 10px;
+    /*Set by movies.js*/
+    background-image: none;
+    width: inherit;
+    height: inherit;
+}
+.left_movie_banner_div {
+    
+    width: 70%;
+    background-color: blue;
+    display: flex;
+    padding: 15px;
+    
+}
+.left_movie_banner_text_holder {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: end;
+    width: 50%;
+    height: 100%;
+    text-align: end;
+}
+.misc {
+    width: 50%;
+    height: 100%;
+}
+.right_movie_banner_div {
+
+    width: 30%;
+    background-color: aqua;
+    border-left: 2px solid black;
+}
