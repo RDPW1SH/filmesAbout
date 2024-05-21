@@ -24,13 +24,13 @@
                 <li class="dropdown">
                     <a href="#home" class="home-active">Movies</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#" onclick="scrollToElement()">Romance</a></li>
-                        <li><a href="#" onclick="scrollToElement()">Horror</a></li>
-                        <li><a href="#" onclick="scrollToElement()">Option 3</a></li>
+                        <li><a href="#romance">Romance</a></li>
+                        <li><a href="#horror">Horror</a></li>
+                        <li><a href="#">Option 3</a></li>
                     </ul>
                 </li>
                 <li><a href="#coming">Coming</a></li>
-                <li><a href="#subscribe" id="headerSubscribe">Subscribe</a></li>
+                <li><a href="#subscribe">Subscribe</a></li>
             </ul>
         </nav>
         <a href="#"><button class="botaoheader">Sign In</button></a>
@@ -47,13 +47,13 @@
 
         <div class="carousel_container"></div>
 
-        <div class="sort_by_genre romance">
+        <div id="romance" class="sort_by_genre romance">
             <div class="sort_by_genre_title">
                 <h2>Romance</h2>
             </div>
             <div class="sort_by_genre_list_romance"></div>
         </div>
-        <div class="sort_by_genre horror">
+        <div id="horror" class="sort_by_genre horror">
             <div class="sort_by_genre_title">
                 <h2>Horror</h2>
             </div>
@@ -61,7 +61,7 @@
         </div>
     </main>
 
-    <footer>
+    <footer id="subscribe">
         <div id="footer-content">
             <div id="footer-contacts">
                 <img class="logo" src="img/logo.png" alt="logo" width="160px" height="105px">
