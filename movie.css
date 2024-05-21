@@ -115,21 +115,25 @@ li, a, button {
 .movie_banner_container {
     width: 100%;
     height: 60vh;
-    background-color: blueviolet;
+    background-position: left calc((50vw - 170px) - 340px) top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url();
 }
 .movie_banner {
     display: flex;
     padding: 10px;
+
     /*Set by movies.js*/
     background-image: none;
+    background-color: rgba(0, 0, 0, 0.6);
     width: inherit;
     height: inherit;
 }
 .left_movie_banner_div {
-    
-    width: 70%;
-    background-color: blue;
+    width: 75%;
     display: flex;
+    justify-content: end;
     padding: 15px;
     
 }
@@ -140,17 +144,33 @@ li, a, button {
     align-items: end;
     width: 50%;
     height: 100%;
-    text-align: end;
+    text-align: justify;
 }
 .misc {
     width: 50%;
     height: 100%;
 }
+.right_movie_banner_div_pad {
+
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
 .right_movie_banner_div {
 
-    width: 30%;
-    background-color: aqua;
+    width: 25%;
     border-left: 2px solid black;
+}
+
+
+/*JS faz o backgroud-image*/
+.right_movie_banner_div_image {
+    width: 100%;
+    /*background-image: url(); - JS SET */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 100%;
 }
 
 /*footer*/
