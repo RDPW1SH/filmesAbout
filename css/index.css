@@ -21,15 +21,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
+    position: relative;
     width: 100%;
-    padding: 10px 100px;
+    padding: 20px 100px;
     top: 0;
     right: 0;
     background-color: #24252A;
     transition: 0.5s;
     z-index: 1000;
-    margin-bottom: 20px;
 }
 
 .nav__links {
