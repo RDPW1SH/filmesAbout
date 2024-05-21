@@ -7,6 +7,26 @@
     <title>Filmes About: </title>
 </head>
 <body>
+    <header>
+        <img class="logo" src="img/logo.png" alt="logo" width="160px" height="105px"></a>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#home" class="home-active">Movies</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" onclick="scrollToElement()">Romance</a></li>
+                        <li><a href="#" onclick="scrollToElement()">Horror</a></li>
+                        <li><a href="#" onclick="scrollToElement()">Option 3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#coming">Coming</a></li>
+                <li><a href="#subscribe" id="headerSubscribe">Subscribe</a></li>
+            </ul>
+        </nav>
+        <a href="#"><button class="botaoheader">Sign In</button></a>
+    </header>
+
     <main>
         <div class="movie_banner_container">
             <div class="movie_banner">
@@ -30,6 +50,73 @@
             </div>
         </div>
     </main>
+
+    <footer>
+        <div id="footer-content">
+            <div id="footer-contacts">
+                <img class="logo" src="img/logo.png" alt="logo" width="160px" height="105px">
+                <p>It's all about your dreams</p>
+
+                <div id="footer-social-media">
+                    <a href="#" class="footer-link" id="instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" class="footer-link" id="facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+
+                    <a href="#" class="footer-link" id="whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <ul class="footer-list">
+                <li>
+                    <h3>Blog</h3>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Tech</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Adventures</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Music</a>
+                </li>
+            </ul>
+
+            <ul class="footer-list">
+                <li>
+                    <h3>Products</h3>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">App</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Desktop</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Cloud</a>
+                </li>
+            </ul>
+
+            <div id="footer-subscribe">
+                <h3>Subscribe</h3>
+                <p>Enter your e-mail to get notified about our news solutions</p>
+                <div id="input-group">
+                    <input type="email" id="email">
+                    <button>
+                        <i class="fa-regular fa-envelope"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="footer-copyright">
+            &#169; 2023 all rights reserved
+        </div>
+    </footer>
 </body>
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
