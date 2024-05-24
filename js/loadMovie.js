@@ -18,43 +18,70 @@ function loadMovie(movieId) {
             include_video: true,
         },
         success: function(data) {
+
             // Titulo
             let movieBannerContainerTitle = document.getElementsByClassName('movie_banner_container_title')[0];
             movieBannerContainerTitle.textContent = data.title;
 
+            // Informações extra
+            let movieBannerContainerExtraInfo = document.getElementsByClassName('movie_banner_container_extra_info')[0];
+            let genresList = data.genres.map(genre => genre.name);
+            genresList = genresList.join(', ');
+
+                //runtime
+                const hours = Math.floor(data.runtime / 60);
+                const minutes = data.runtime % 60;
+                const runtimeFormatted = `${hours}h ${minutes}m`;
+
+            movieBannerContainerExtraInfo.textContent = `${data.release_date} | ${genresList} | ${runtimeFormatted}`;
+
+            //Slogan
+            let movieBannerContainerSlogan = document.getElementsByClassName('movie_banner_container_slogan')[0];
+            movieBannerContainerSlogan.textContent = data.tagline;
             // Votos - Classificação
-            let appendDivGenre = document.getElementsByClassName('movie_banner_container_classification')[0];
-            appendDivGenre.textContent = Math.round(data.vote_average * 10) / 10;
+            let fillBar = document.getElementsByClassName('fill-bar')[0];
+            let appendDivGenre = document.getElementsByClassName('rating-value')[0];
+            fillBar.style.width = `${Math.round(data.vote_average / 10 * 100)}%`; //width fillbar = vote_average * 10; ex: 3.9 to 39%
+            appendDivGenre.textContent = Math.round(data.vote_average * 10) / 10; //round votes to 2 numbers
+
             
             // Imagem
-            let imageMovie = document.getElementsByClassName('right_movie_banner_div_image')[0];
-            if (imageMovie) {
-                if (data.poster_path) {
-                    let imageUrl = `https://image.tmdb.org/t/p/w500${data.poster_path}`;
-                    imageMovie.setAttribute("style", `background-image: url(${imageUrl}); background-repeat: no-repeat;`);
+            let imageMovie = document.getElementsByClassName('right_movie_banner_div_image')[0]; //find div for image placement
+        
+            if (imageMovie) { // If exists
+                if (data.poster_path) { // If exists
+                    let imageUrl = `https://image.tmdb.org/t/p/w500${data.poster_path}`; //link to image
+                    //set image to background
+                    imageMovie.setAttribute("style", `background-image: url(${imageUrl}); background-repeat: no-repeat;`); 
                 } else {
                     console.error('O caminho do poster não está disponível.');
                 }
-            } else {
-                console.error('Elemento com a classe right_movie_banner_image não encontrado.');
-            }
+            } 
 
             // Container Imagem
             let containerImageMovie = document.getElementsByClassName('movie_banner_container')[0];
             if (containerImageMovie) {
                 if (data.poster_path) {
-                    let imageUrl = `https://image.tmdb.org/t/p/w500${data.backdrop_path}`;
+                    let imageUrl = `https://image.tmdb.org/t/p/w780${data.backdrop_path}`;
                     containerImageMovie.setAttribute("style", `background-image: url(${imageUrl}); background-repeat: no-repeat;`);
                 } else {
                     console.error('O caminho do poster não está disponível.');
                 }
-            } else {
-                console.error('Elemento com a classe right_movie_banner_image não encontrado.');
-            }
+            } 
             // Descrição
             let movieBannerContainerOverview = document.getElementsByClassName('movie_banner_container_overview')[0];
             movieBannerContainerOverview.textContent = data.overview;
             console.log(data);
+            
+
+            if (data.videos.results.length > 0) {
+                // O primeiro resultado geralmente é o trailer
+                let trailerKey = data.videos.results[0].key;
+                let trailerUrl = `https://www.youtube.com/watch?v=${trailerKey}`;
+                console.log("Trailer URL:", trailerUrl);
+            } else {
+                console.log("Nenhum trailer disponível para este filme.");
+            }
             
             // Agora que os dados do filme foram carregados, chame a função onPageLoaded
             onPageLoaded();
@@ -77,3 +104,4 @@ getUrlParameter('id', function(movieId) {
     // Chama a função loadMovie com o ID do filme
     loadMovie(movieId);
 });
+
