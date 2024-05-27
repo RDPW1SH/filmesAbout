@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick-1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick-1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick-1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick-1.8.1/slick/slick-theme.css" />
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="index.js">
     <title>FilmesAbout</title>
@@ -26,10 +26,8 @@
                     <ul class="dropdown-menu">
                         <li><a href="#romance">Romance</a></li>
                         <li><a href="#horror">Horror</a></li>
-                        <li><a href="#">Option 3</a></li>
                     </ul>
                 </li>
-                <li><a href="#coming">Coming</a></li>
                 <li><a href="#subscribe">Subscribe</a></li>
             </ul>
         </nav>
@@ -37,13 +35,16 @@
     </header>
 
     <main>
+
         <div class="search">
             <div>
                 <i class="bi bi-search"></i>
             </div>
             <label for="searchInput"></label>
-            <input type="text" id="searchInput" placeholder="Pesquisar">
+            <input type="text" id="searchInput" placeholder="Nome do Filme">
+            <button id="pesq">Pesquisar</button>
         </div>
+        <div id="results"></div>
 
         <div class="carousel_container"></div>
 
