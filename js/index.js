@@ -1,6 +1,7 @@
 $(document).ready(function () {
     const searchInput = $('#searchInput');
     const resultsContainer = $('#results');
+    const searchButton = $('#pesq');
     const API_KEY = 'a1bf35fb81fc85767490536ac889539f';
     const API_URL = 'https://api.themoviedb.org/3/search/movie';
 
@@ -38,6 +39,12 @@ $(document).ready(function () {
         if (movies && movies.length > 0) {
             movies.slice(0, 5).forEach(movie => {
                 const movieItem = $('<div class="result-item"></div>').text(movie.title);
+                movieItem.data('id', movie.id); // Armazena o ID do filme no atributo data
+                movieItem.on('click', function () {
+                    searchInput.val(movie.title);
+                    searchInput.data('movieId', movie.id); // Armazena o ID do filme no input de pesquisa
+                    resultsContainer.hide();
+                });
                 resultsContainer.append(movieItem);
             });
             resultsContainer.show();
@@ -46,4 +53,12 @@ $(document).ready(function () {
             resultsContainer.show();
         }
     }
+
+    searchButton.on('click', function () {
+        const movieId = searchInput.data('movieId');
+        if (movieId) {
+            window.location.href = `movies.html?id=${encodeURIComponent(movieId)}`;
+        }
+    });
 });
+

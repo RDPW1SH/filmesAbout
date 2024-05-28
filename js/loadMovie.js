@@ -35,9 +35,10 @@ function loadMovie(movieId) {
 
             movieBannerContainerExtraInfo.textContent = `${data.release_date} | ${genresList} | ${runtimeFormatted}`;
 
-            //Slogan
+            // Slogan
             let movieBannerContainerSlogan = document.getElementsByClassName('movie_banner_container_slogan')[0];
             movieBannerContainerSlogan.textContent = data.tagline;
+
             // Votos - Classificação
             let fillBar = document.getElementsByClassName('fill-bar')[0];
             let appendDivGenre = document.getElementsByClassName('rating-value')[0];
@@ -96,7 +97,6 @@ function loadMovie(movieId) {
 // Função a ser chamada após o carregamento completo da página
 function onPageLoaded() {
     console.log('A página foi carregada completamente.');
-    
 }
 
 
@@ -104,4 +104,3 @@ getUrlParameter('id', function(movieId) {
     // Chama a função loadMovie com o ID do filme
     loadMovie(movieId);
 });
-
