@@ -155,7 +155,6 @@ header {
     padding: 10px;
     background-color: #f9f9f9;
     position: absolute;
-    top: 60px;
     left: 0;
     right: 0;
     z-index: 1000;
@@ -173,7 +172,24 @@ header {
     background-color: #ddd;
 }
 
+@media screen and (max-width: 768px) {
+    .search {
+        width: 70%;
+        height: 50px;
+    }
+}
 
+@media screen and (max-width: 768px) {
+    .bi-search {
+        margin: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #pesq {
+        height: 50px;
+    }
+}
 
 /*footer*/
 
