@@ -214,6 +214,27 @@ header {
     font-weight: bold;
 }
 /*footer*/
+.movie_participants_container {
+    display: flex;
+    width: 100%;
+    gap: 15px;
+    justify-content: space-around;
+    height: auto;
+    flex-wrap: wrap;
+}
+.movie_participant {
+    width: fit-content;
+    height: auto;
+    display: flex;
+    padding: 10px;
+    border-radius: 20px;
+    background: bisque;
+}
+.movie_participant_div_info {
+    margin-left: 3px;
+}
+/*Movie Cast & Crew*/
+
 
 footer {
     width: 100%;
@@ -395,11 +416,15 @@ footer {
     .movie_participant_image_div {
         margin-right: 10px;
     }
+    .no-border-radius {
+        border-radius: none !important;
+    }
     .movie_participant_image_div img {
         border-radius: 50%;
         width: 50px;
         height: 50px;
     }
+
     .movie_participant_name {
         font-weight: bold;
     }

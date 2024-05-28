@@ -20,11 +20,11 @@ function loadMovie(movieId) {
         success: function(data) {
 
             // Titulo
-            let movieBannerContainerTitle = document.getElementsByClassName('movie_banner_container_title')[0];
+            let movieBannerContainerTitle = document.querySelector(".movie_banner_container_title");
             movieBannerContainerTitle.textContent = data.title;
 
             // Informações extra
-            let movieBannerContainerExtraInfo = document.getElementsByClassName('movie_banner_container_extra_info')[0];
+            let movieBannerContainerExtraInfo = document.querySelector(".movie_banner_container_extra_info");
             let genresList = data.genres.map(genre => genre.name);
             genresList = genresList.join(', ');
 
@@ -36,17 +36,17 @@ function loadMovie(movieId) {
             movieBannerContainerExtraInfo.textContent = `${data.release_date} | ${genresList} | ${runtimeFormatted}`;
 
             // Slogan
-            let movieBannerContainerSlogan = document.getElementsByClassName('movie_banner_container_slogan')[0];
+            let movieBannerContainerSlogan = document.querySelector(".movie_banner_container_slogan");
             movieBannerContainerSlogan.textContent = data.tagline;
 
             // Votos - Classificação
-            let fillBar = document.getElementsByClassName('fill-bar')[0];
-            let appendDivGenre = document.getElementsByClassName('rating-value')[0];
+            let fillBar = document.querySelector(".fill-bar");
+            let appendDivGenre = document.querySelector('.rating-value');
             fillBar.style.width = `${Math.round(data.vote_average / 10 * 100)}%`; //width fillbar = vote_average * 10; ex: 3.9 to 39%
             appendDivGenre.textContent = Math.round(data.vote_average * 10) / 10; //round votes to 2 numbers
 
             // Imagem
-            let imageMovie = document.getElementsByClassName('right_movie_banner_div_image')[0]; //find div for image placement
+            let imageMovie = document.querySelector('.right_movie_banner_div_image'); //find div for image placement
 
             //Diretor
             loadCredits(movieId);
@@ -62,7 +62,7 @@ function loadMovie(movieId) {
             } 
 
             // Container Imagem
-            let containerImageMovie = document.getElementsByClassName('movie_banner_container')[0];
+            let containerImageMovie = document.querySelector(".movie_banner_container");
             if (containerImageMovie) {
                 if (data.poster_path) {
                     let imageUrl = `https://image.tmdb.org/t/p/w780${data.backdrop_path}`;
@@ -71,22 +71,11 @@ function loadMovie(movieId) {
                     console.error('O caminho do poster não está disponível.');
                 }
             } 
+
             // Descrição
-            let movieBannerContainerOverview = document.getElementsByClassName('movie_banner_container_overview')[0];
+            let movieBannerContainerOverview = document.querySelector(".movie_banner_container_overview");
             movieBannerContainerOverview.textContent = data.overview;
             console.log(data);
-            
-
-            if (data.videos.results.length > 0) {
-                // O primeiro resultado geralmente é o trailer
-                let trailerKey = data.videos.results[0].key;
-                let trailerUrl = `https://www.youtube.com/watch?v=${trailerKey}`;
-                console.log("Trailer URL:", trailerUrl);
-            } else {
-                console.log("Nenhum trailer disponível para este filme.");
-            }
-            
-            // Agora que os dados do filme foram carregados, chame a função onPageLoaded
             onPageLoaded();
         },
         error: function(error) {
@@ -143,9 +132,10 @@ function loadCredits(movieId) {
                         castMemberDiv.classList.add('movie_participant');
                         castMemberDiv.innerHTML = `
                             <div class="movie_participant_image_div">
-                                <img src="https://image.tmdb.org/t/p/w45${member.profile_path}" alt="${member.name}" onerror="this.src='placeholder.jpg';">
+                                <img src="https://image.tmdb.org/t/p/w45${member.profile_path}" alt="${member.name}" onerror="this.src='' 
+                                this.classList.add('no-border-radius');">
                             </div>
-                            <div>
+                            <div class="movie_participant_div_info">
                                 <p class="movie_participant_name">${member.name}</p>
                                 <p class="movie_participant_character">as ${member.character}</p>
                             </div>
