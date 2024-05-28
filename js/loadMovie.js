@@ -38,16 +38,19 @@ function loadMovie(movieId) {
             //Slogan
             let movieBannerContainerSlogan = document.getElementsByClassName('movie_banner_container_slogan')[0];
             movieBannerContainerSlogan.textContent = data.tagline;
+
             // Votos - Classificação
             let fillBar = document.getElementsByClassName('fill-bar')[0];
             let appendDivGenre = document.getElementsByClassName('rating-value')[0];
             fillBar.style.width = `${Math.round(data.vote_average / 10 * 100)}%`; //width fillbar = vote_average * 10; ex: 3.9 to 39%
             appendDivGenre.textContent = Math.round(data.vote_average * 10) / 10; //round votes to 2 numbers
 
-            
             // Imagem
             let imageMovie = document.getElementsByClassName('right_movie_banner_div_image')[0]; //find div for image placement
-        
+
+            //Diretor
+            loadCredits(movieId);
+
             if (imageMovie) { // If exists
                 if (data.poster_path) { // If exists
                     let imageUrl = `https://image.tmdb.org/t/p/w500${data.poster_path}`; //link to image
@@ -99,6 +102,63 @@ function onPageLoaded() {
     
 }
 
+function loadCredits(movieId) {
+    $.ajax({
+        url: `https://api.themoviedb.org/3/movie/${movieId}/credits`,
+        type: 'GET',
+        data: {
+            api_key: 'a1bf35fb81fc85767490536ac889539f',
+        },
+        success: function(data) {
+            console.log(data);
+            let director = data.crew.find(member => member.job === 'Director');
+            let story = data.crew.find(member => member.job === 'Writer');
+            let screenplay = data.crew.find(member => member.job === 'Screenplay');
+            
+            // Achar variaveis
+            let movieBannerContainerDirector = document.getElementById("left_movie_banner_social_director");
+            let movieBannerContainerStory = document.getElementById("left_movie_banner_social_story");
+            let movieBannerContainerScreenplay = document.getElementById("left_movie_banner_social_screenplay");
+
+            if (director) {
+                movieBannerContainerDirector.textContent = `${director.name}`;
+            } else {
+                movieBannerContainerDirector.textContent = 'Sem informações';
+            }
+
+            if (story) {
+                movieBannerContainerStory.textContent = `${story.name}`;
+            } else {
+                movieBannerContainerStory.textContent = 'Sem informações';
+            }
+
+            if (screenplay) {
+                movieBannerContainerScreenplay.textContent = `${screenplay.name}`;
+            } else {
+                movieBannerContainerScreenplay.textContent = 'Sem informações';
+            }
+
+            const castContainer = document.getElementById('cast-container');
+                    data.cast.forEach(member => {
+                        const castMemberDiv = document.createElement('div');
+                        castMemberDiv.classList.add('movie_participant');
+                        castMemberDiv.innerHTML = `
+                            <div class="movie_participant_image_div">
+                                <img src="https://image.tmdb.org/t/p/w45${member.profile_path}" alt="${member.name}" onerror="this.src='placeholder.jpg';">
+                            </div>
+                            <div>
+                                <p class="movie_participant_name">${member.name}</p>
+                                <p class="movie_participant_character">as ${member.character}</p>
+                            </div>
+                        `;
+                        castContainer.appendChild(castMemberDiv);
+                    });
+        },
+        error: function(error) {
+            console.error('Erro ao carregar os créditos do filme:', error);
+        }
+    });
+}
 
 getUrlParameter('id', function(movieId) {
     // Chama a função loadMovie com o ID do filme
