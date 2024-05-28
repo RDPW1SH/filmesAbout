@@ -134,9 +134,12 @@ header {
     flex-direction: column;
     gap: 15px;
     align-items: end;
-    width: 50%;
+    width: 65%;
     height: 100%;
     text-align: right;
+}
+.left_movie_banner_social {
+    width: 35%;
 }
 .movie_banner_container_slogan {
     font-style: italic;
