@@ -55,15 +55,17 @@ $(document).ready(function(){
                             }
 
                             //criacao do filme
-                            let slide = '<div class="sort_by_genre_poster_div"><a href="movies.html?id=' + movie.id + '" class="movie-link"><img src="https://image.tmdb.org/t/p/w500/' + movie.poster_path + '"><div class="sort_by_genre_movie_text"><h3>' + movie.title + '</h3><span class="green">' + votes + '</span></div><div class="overview">' + overview + '</div></a></div>';
+                            let slide = `<div class="sort_by_genre_poster_div">
+                                            <a href="movies.html?id=${movie.id}" class="movie-link">
+                                            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}">
+                                            <div class="sort_by_genre_movie_text">
+                                                <h3>${movie.title}</h3>
+                                                <span class="green">${votes}</span>
+                                            </div>
+                                            <div class="overview">${overview}</div>
+                                            </a>
+                                        </div>`;
                             $(appendDivGenre).append(slide);
-
-                            $(slide).on('click', function() {
-                                let movieId = movie.id;
-                                console.log(movieId);
-                                // Passar o ID do filme para o outro arquivo JavaScript
-                                loadMovie(movieId);
-                            });
                         });        
                     }
                 });
@@ -92,7 +94,7 @@ $(document).ready(function(){
 
             // Verificar se o gênero foi encontrado
             if (horrorGenre) {
-                // Fazer outra solicitação para obter os filmes do gênero 
+                // Fazer uma solicitação para obter os filmes do gênero 
                 $.ajax({
                     url: 'https://api.themoviedb.org/3/discover/movie',
                     type: 'GET',
@@ -128,20 +130,22 @@ $(document).ready(function(){
                             }
 
                             //criacao do filme
-                            let slide = '<div class="sort_by_genre_poster_div"><a href="movies.html?id=' + movie.id + '" class="movie-link"><img src="https://image.tmdb.org/t/p/w500/' + movie.poster_path + '"><div class="sort_by_genre_movie_text"><h3>' + movie.title + '</h3><span class="green">' + votes + '</span></div><div class="overview">' + overview + '</div></a></div>';
+                            let slide = `<div class="sort_by_genre_poster_div">
+                                            <a href="movies.html?id=${movie.id}" class="movie-link">
+                                            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}">
+                                            <div class="sort_by_genre_movie_text">
+                                                <h3>${movie.title}</h3>
+                                                <span class="green">${votes}</span>
+                                            </div>
+                                            <div class="overview">${overview}</div>
+                                            </a>
+                                        </div>`;
                             $(appendDivGenre).append(slide);
-
-                            $(slide).on('click', function() {
-                                let movieId = movie.id;
-                                console.log(movieId);
-                                // Passar o ID do filme para o outro arquivo JavaScript
-                                loadMovie(movieId);
-                            });
                         });        
                     }
                 });
             } else {
-                console.log('Gênero de romance não encontrado');
+                console.log('Gênero de horror não encontrado');
             }
         }
     });
