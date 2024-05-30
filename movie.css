@@ -11,19 +11,20 @@
 header li,
 a,
 button {
+    font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
     color: #edf0f1;
     text-decoration: none;
 }
 
-header {
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     width: 100%;
-    padding: 10px 100px;
+    padding: 20px 100px;
     top: 0;
     right: 0;
     background-color: #24252A;
@@ -89,7 +90,7 @@ header {
     background-color: #3a3b3f;
 }
 
-.dropdown:hover .dropdown-menu {
+#dropdown:hover .dropdown-menu {
     display: block;
 }
 
@@ -97,13 +98,76 @@ header {
     cursor: pointer;
 }
 
-.botaoheader {
-    padding: 9px 25px;
-    background-color: rgba(0, 136, 169, 1);
+.login-button button {
     border: none;
+    padding: 9px 25px;
     border-radius: 50px;
+    background-color: rgba(0, 136, 169, 1);
     cursor: pointer;
-    transition: all 0.3 ease 0s;
+}
+
+.login-button button a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.mobile-menu-icon {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-bar{
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .nav-bar {
+        padding: 1.5rem 4rem;
+    }
+    .nav-item {
+        display: none;
+    }
+    .login-button {
+        display: none;
+    }
+    .mobile-menu {
+        background-color: #24252A;
+    }
+    .mobile-menu-icon {
+        display: block;
+    }
+    .mobile-menu-icon button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    .mobile-menu .nav-item {
+        display: block;
+        padding-top: 1.2rem;
+    }
+    .mobile-menu .login-button {
+        display: block;
+        padding: 1rem 2rem;
+    }
+    .mobile-menu .login-button button {
+        width: 100%;
+    }
+    .open {
+        display: block;
+    }
 }
 
 .movie_banner_container {
