@@ -11,31 +11,54 @@
     <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick-1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick-1.8.1/slick/slick-theme.css" />
     <link rel="stylesheet" href="css/index.css">
-    
+
     <title>FilmesAbout</title>
 </head>
 
 <body>
     <header>
-        <img class="logo" src="img/logo.png" alt="logo" width="160px" height="105px"></a>
-        <nav>
-            <ul class="nav__links">
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="#home" class="home-active">Movies</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#romance">Romance</a></li>
-                        <li><a href="#horror">Horror</a></li>
-                    </ul>
-                </li>
-                <li><a href="#subscribe">Subscribe</a></li>
-            </ul>
+        <nav class="nav-bar">
+            <div>
+                <img class="logo" src="img/logo.png" alt="logo" width="160px" height="105px">
+            </div>
+            <div class="nav-list">
+                <ul class="nav__links">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li id="dropdown" class="nav-item">
+                        <a href="#" class="nav-link">Movies</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#romance">Romance</a></li>
+                            <li><a href="#horror">Horror</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="#subscribe" class="nav-link"> Subscribe</a></li>
+                </ul>
+            </div>
+            <div class="login-button">
+                <button><a href="#">Sign In</a></button>
+            </div>
+
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="img/menu_white_36dp.svg" alt=""></button>
+            </div>
         </nav>
-        <a href="#"><button class="botaoheader">Sign In</button></a>
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#romance">Romance</a></li>
+                <li class="nav-item"><a href="#horror">Horror</a></li>
+                <li class="nav-item"><a href="#subscribe" class="nav-link">Subscribe</a></li>
+            </ul>
+
+            <div class="login-button">
+                <button><a href="#">Sign In</a></button>
+            </div>
+        </div>
     </header>
 
+
     <main>
-    
+
         <div class="search">
             <div>
                 <i class="bi bi-search"></i>
